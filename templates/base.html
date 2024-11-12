@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <meta charset="UTF-8">
+    <title>Блог о программировании</title>
+    <style>
+        body {
+            min-height: 100vh; /* Устанавливает минимальную высоту страницы равной высоте окна браузера */
+            position: relative; /* Позволяет позиционировать дочерние элементы относительно тела страницы */
+            margin: 0; /* Убираем внешние отступы */
+            box-sizing: border-box; /* Включаем внутренние отступы и границы в ширину и высоту элементов */
+        }
+
+        main {
+            padding: 0 10px 60px;
+        }
+
+        header {
+            padding: 0 10px;
+        }
+
+        footer {
+            position: absolute; /* Определяет положение футера относительно родителя */
+            bottom: 0; /* Прикрепляет футер к нижней части страницы */
+            width: 100%; /* Расширяет футер на всю ширину страницы */
+            background-color: #f1f1f1; /* Цвет фона футера */
+            padding: 10px; /* Внутренний отступ */
+            text-align: center; /* Выравнивание текста по центру */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'posts:post_list' %}">Главная</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+        © Блог о программировании 2024
+    </footer>
+</body>
+</html>
